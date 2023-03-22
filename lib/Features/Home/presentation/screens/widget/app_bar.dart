@@ -12,7 +12,7 @@ class HomeAppBar extends StatelessWidget {
       child: Row(children: [
         Image.asset(
           AssetsImg.logo,
-          height: 20,
+          height: 25,
         ),
         const Spacer(),
         IconButton(
