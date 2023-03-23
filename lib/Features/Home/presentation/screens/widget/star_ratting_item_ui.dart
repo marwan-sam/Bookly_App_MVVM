@@ -9,24 +9,26 @@ class StarAndRattingUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
-        Icon(
+      children: [
+        const Icon(
           FontAwesomeIcons.solidStar,
           color: colorStar,
         ),
-        SizedBox(
+        const SizedBox(
           width: 6.3,
         ),
-        Text(
+        const Text(
           '4.8',
           style: Styles.text16w500,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Text(
           '(245)',
-          style: Styles.text14normal,
+          style: Styles.text14normal.copyWith(
+            color: colorGrey,
+          ),
         ),
       ],
     );
