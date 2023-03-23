@@ -2,6 +2,7 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 import 'app_bar.dart';
+import 'item_in_list_best_seller.dart';
 import 'list_view_horizontal.dart';
 
 class HomeScreenBody extends StatelessWidget {
@@ -21,8 +22,12 @@ class HomeScreenBody extends StatelessWidget {
           ),
           Text(
             'Best Seller',
-            style: Styles.titleMeduim,
-          )
+            style: Styles.text18w600,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          BookItemInListBestSeller(),
         ],
       ),
     );
