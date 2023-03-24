@@ -4,13 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class StarAndRattingUI extends StatelessWidget {
-  const StarAndRattingUI({super.key});
-
+  const StarAndRattingUI({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
+  final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         const Icon(
+          size: 14,
           FontAwesomeIcons.solidStar,
           color: colorStar,
         ),
@@ -25,8 +30,8 @@ class StarAndRattingUI extends StatelessWidget {
           width: 5,
         ),
         Text(
-          '(245)',
-          style: Styles.text14normal.copyWith(
+          '(2390)',
+          style: Styles.text14w600.copyWith(
             color: colorGrey,
           ),
         ),

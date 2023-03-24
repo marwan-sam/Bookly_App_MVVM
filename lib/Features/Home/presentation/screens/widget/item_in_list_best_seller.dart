@@ -52,12 +52,13 @@ class ItemInListBestSeller extends StatelessWidget {
                   ),
                   const Text(
                     "J.K. Rowling",
-                    style: Styles.text14normal,
+                    style: Styles.text14w600,
                   ),
                   const SizedBox(
                     height: 3,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       const Text(
                         "19.99 €",
