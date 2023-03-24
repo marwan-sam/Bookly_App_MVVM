@@ -26,7 +26,7 @@ class ButtonApp extends StatelessWidget {
                 borderRadius: borderRadius ?? BorderRadius.circular(16))),
         child: Text(
           txt,
-          style: Styles.text18bold.copyWith(
+          style: Styles.text16w900.copyWith(
             color: colorTxt,
           ),
         ),
