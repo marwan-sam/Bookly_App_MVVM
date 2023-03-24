@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'app_bar_book_details.dart';
 import 'book_Item_ui.dart';
+import 'button_actions.dart';
 import 'star_ratting_item_ui.dart';
 
 class BookDetailsBody extends StatelessWidget {
@@ -46,6 +47,10 @@ class BookDetailsBody extends StatelessWidget {
           const StarAndRattingUI(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
+          const SizedBox(
+            height: 37,
+          ),
+          const ButtonActions(),
         ],
       ),
     );
