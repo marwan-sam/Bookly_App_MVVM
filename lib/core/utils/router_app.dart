@@ -1,11 +1,13 @@
 import 'package:bookly_app/Features/Home/presentation/screens/book_details_screen.dart';
 import 'package:bookly_app/Features/Home/presentation/screens/home_screen.dart';
+import 'package:bookly_app/Features/Search/presintation/screen/search_screen.dart';
 import 'package:bookly_app/Features/Splash/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class RouterApp {
   static const keyHomeRoute = '/homeScreen';
   static const keyBookDetailsRoute = '/detailsScreen';
+  static const keySearchRoute = '/searchScreen';
 
   // GoRouter configuration
   static final routers = GoRouter(
@@ -20,10 +22,15 @@ abstract class RouterApp {
         path: keyHomeRoute,
         builder: (context, state) => const HomeScreen(),
       ),
-      // * GoRoute For book details Screen :=
+      // * GoRoute For Book Details Screen :=
       GoRoute(
         path: keyBookDetailsRoute,
         builder: (context, state) => const BookDetailsScreen(),
+      ),
+      // * GoRoute For Search Screen :=
+      GoRoute(
+        path: keySearchRoute,
+        builder: (context, state) => const SearchScreen(),
       ),
     ],
   );

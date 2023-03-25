@@ -6,8 +6,8 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ItemInListBestSeller extends StatelessWidget {
-  const ItemInListBestSeller({super.key});
+class ItemInListView extends StatelessWidget {
+  const ItemInListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class ItemInListBestSeller extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30),
+              padding: const EdgeInsets.only(left: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -66,7 +66,7 @@ class ItemInListBestSeller extends StatelessWidget {
                         style: Styles.text20w800,
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.25,
+                        width: MediaQuery.of(context).size.width * 0.19,
                       ),
                       const StarAndRattingUI(),
                     ],

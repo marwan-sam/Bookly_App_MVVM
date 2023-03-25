@@ -7,10 +7,10 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SearchBody(),
-      ],
+    return const Scaffold(
+      body: SafeArea(
+        child: SearchBody(),
+      ),
     );
   }
 }
