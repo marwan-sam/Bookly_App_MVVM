@@ -14,7 +14,6 @@ class BestSellerCubit extends Cubit<BestSellerState> {
   Future<void> fetchBooks() async {
     emit(BestSellerLoading());
     var res = await repo.fetchNewsBooks();
-    // fold<B>(B Function(Failure) ifLeft, B Function(List<BooksModel>) ifRight)
     res.fold(
       (failure) => emit(BestSellerError(failure.messageError)),
       (getData) => emit(BestSellerSucc(getData)),
