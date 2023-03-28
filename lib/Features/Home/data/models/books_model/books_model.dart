@@ -1,10 +1,12 @@
+import 'package:bookly_app/Features/Home/data/models/books_model/sale_info.dart';
+import 'package:bookly_app/Features/Home/data/models/books_model/search_info.dart';
+import 'package:bookly_app/Features/Home/data/models/books_model/volume_info.dart';
 import 'package:equatable/equatable.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 import 'access_info.dart';
-import 'sale_info.dart';
-import 'search_info.dart';
-import 'volume_info.dart';
 
+@JsonSerializable()
 class BooksModel extends Equatable {
   final String? kind;
   final String? id;
@@ -26,6 +28,27 @@ class BooksModel extends Equatable {
     this.searchInfo,
   });
 
+  // factory BooksModel.fromJson(Map<String, dynamic> json) => BooksModel(
+  //       kind: json['kind']?.toString(),
+  //       id: json['id']?.toString(),
+  //       etag: json['etag']?.toString(),
+  //       selfLink: json['selfLink']?.toString(),
+  //       volumeInfo: json['volumeInfo'] == null
+  //           ? null
+  //           : VolumeInfo.fromJson(
+  //               Map<String, dynamic>.from(json['volumeInfo'])),
+  //       saleInfo: json['saleInfo'] == null
+  //           ? null
+  //           : SaleInfo.fromJson(Map<String, dynamic>.from(json['saleInfo'])),
+  //       accessInfo: json['accessInfo'] == null
+  //           ? null
+  //           : AccessInfo.fromJson(
+  //               Map<String, dynamic>.from(json['accessInfo'])),
+  //       searchInfo: json['searchInfo'] == null
+  //           ? null
+  //           : SearchInfo.fromJson(
+  //               Map<String, dynamic>.from(json['searchInfo'])),
+  //     );
   factory BooksModel.fromJson(Map<String, dynamic> json) => BooksModel(
         kind: json['kind']?.toString(),
         id: json['id']?.toString(),
@@ -41,11 +64,11 @@ class BooksModel extends Equatable {
         accessInfo: json['accessInfo'] == null
             ? null
             : AccessInfo.fromJson(
-                Map<String, dynamic>.from(json['accessInfo'])),
+                Map<String, dynamic>.from(json['accessInfo']!)),
         searchInfo: json['searchInfo'] == null
             ? null
             : SearchInfo.fromJson(
-                Map<String, dynamic>.from(json['searchInfo'])),
+                Map<String, dynamic>.from(json['searchInfo']!)),
       );
 
   Map<String, dynamic> toJson() => {

@@ -28,6 +28,23 @@ class AccessInfo extends Equatable {
     this.quoteSharingAllowed,
   });
 
+  // factory AccessInfo.fromJson(Map<String, dynamic> json) => AccessInfo(
+  //       country: json['country']?.toString(),
+  //       viewability: json['viewability']?.toString(),
+  //       embeddable: json['embeddable']?.toString().contains("true"),
+  //       publicDomain: json['publicDomain']?.toString().contains("true"),
+  //       textToSpeechPermission: json['textToSpeechPermission']?.toString(),
+  //       epub: json['epub'] == null
+  //           ? null
+  //           : Epub.fromJson(Map<String, dynamic>.from(json['epub'])),
+  //       pdf: json['pdf'] == null
+  //           ? null
+  //           : Pdf.fromJson(Map<String, dynamic>.from(json['pdf'])),
+  //       webReaderLink: json['webReaderLink']?.toString(),
+  //       accessViewStatus: json['accessViewStatus']?.toString(),
+  //       quoteSharingAllowed:
+  //           json['quoteSharingAllowed']?.toString().contains("true"),
+  //     );
   factory AccessInfo.fromJson(Map<String, dynamic> json) => AccessInfo(
         country: json['country']?.toString(),
         viewability: json['viewability']?.toString(),
@@ -45,7 +62,6 @@ class AccessInfo extends Equatable {
         quoteSharingAllowed:
             json['quoteSharingAllowed']?.toString().contains("true"),
       );
-
   Map<String, dynamic> toJson() => {
         if (country != null) 'country': country,
         if (viewability != null) 'viewability': viewability,
