@@ -6,9 +6,11 @@ class ErrorUI extends StatelessWidget {
   final String messageError;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      messageError,
-      style: Styles.text18w600.copyWith(color: Colors.red),
+    return Center(
+      child: Text(
+        messageError,
+        style: Styles.text18w600.copyWith(color: Colors.red),
+      ),
     );
   }
 }

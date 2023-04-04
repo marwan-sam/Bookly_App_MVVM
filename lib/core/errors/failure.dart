@@ -31,7 +31,7 @@ class ServerFailure extends Failure {
         return ServerFailure('Connection Error');
 
       case DioErrorType.unknown:
-        if (e.message!.contains('SocketException')) {
+        if (e.message?.contains('SocketException') ?? false) {
           return ServerFailure('No Interent Connections');
         }
         return ServerFailure('Somthing Error, try again!');
