@@ -6,9 +6,22 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ItemInListView extends StatelessWidget {
-  const ItemInListView({super.key});
-
+class ItemInListViewBest extends StatelessWidget {
+  const ItemInListViewBest({
+    super.key,
+    required this.cover,
+    required this.title,
+    required this.person,
+    required this.cost,
+    required this.rate,
+    required this.views,
+  });
+  final String cover;
+  final String title;
+  final String person;
+  final double cost;
+  final double rate;
+  final int views;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,9 +38,9 @@ class ItemInListView extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
                     color: Colors.amberAccent,
-                    image: const DecorationImage(
+                    image: DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage(AssetsImg.book1),
+                      image: NetworkImage(cover),
                     )),
               ),
             ),
@@ -39,7 +52,7 @@ class ItemInListView extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      "Harry Potter and the Goblet of Fire",
+                      title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.text20normal.copyWith(
@@ -50,8 +63,8 @@ class ItemInListView extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  const Text(
-                    "J.K. Rowling",
+                  Text(
+                    person,
                     style: Styles.text14w600,
                   ),
                   const SizedBox(
@@ -60,15 +73,18 @@ class ItemInListView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Text(
-                        "19.99 €",
+                      Text(
+                        "$cost €",
                         overflow: TextOverflow.ellipsis,
                         style: Styles.text20w800,
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.19,
                       ),
-                      const StarAndRattingUI(),
+                      StarAndRattingUI(
+                        rate: rate,
+                        views: views,
+                      ),
                     ],
                   )
                 ],

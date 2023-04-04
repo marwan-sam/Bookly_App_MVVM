@@ -7,8 +7,12 @@ class StarAndRattingUI extends StatelessWidget {
   const StarAndRattingUI({
     super.key,
     this.mainAxisAlignment = MainAxisAlignment.start,
+    required this.rate,
+    required this.views,
   });
   final MainAxisAlignment mainAxisAlignment;
+  final double rate;
+  final int views;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,15 +26,15 @@ class StarAndRattingUI extends StatelessWidget {
         const SizedBox(
           width: 6.3,
         ),
-        const Text(
-          '4.8',
+        Text(
+          '${rate}',
           style: Styles.text16w500,
         ),
         const SizedBox(
           width: 5,
         ),
         Text(
-          '(2390)',
+          '(${views})',
           style: Styles.text14w600.copyWith(
             color: colorGrey,
           ),

@@ -7,12 +7,21 @@ class ListViewResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10.0),
-          child: ItemInListView(),
+          child: ItemInListViewBest(
+            //TODO - Add Cost , Cover , Person , Ratting .... values from api:
+            cost: 1234,
+            cover: '',
+            person: '',
+            rate: 55,
+            title: '',
+            views: 1234,
+          ),
         );
       },
     );
