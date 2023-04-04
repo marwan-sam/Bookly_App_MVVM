@@ -25,24 +25,13 @@ class ItemInListViewBest extends StatelessWidget {
         height: 125,
         child: Row(
           children: [
-            // AspectRatio(
-            //   aspectRatio: 2.5 / 4,
-            //   child: Container(
-            //     decoration: BoxDecoration(
-            //         borderRadius: BorderRadius.circular(16),
-            //         color: Colors.amberAccent,
-            //         image: DecorationImage(
-            //           fit: BoxFit.fill,
-            //           image: NetworkImage(cover),
-            //         )),
-            //   ),
-            // ),
             ImageBookItem(
-              urlImg:
-                  bookModel.volumeInfo.imageLinks?.thumbnail ?? imgNotAvalible,
+              urlImg: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                  bookModel.volumeInfo.imageLinks?.smallThumbnail ??
+                  imgNotAvalible,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 15),
+              padding: const EdgeInsets.only(left: 20, top: 10, right: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -62,10 +51,10 @@ class ItemInListViewBest extends StatelessWidget {
                   ),
                   Text(
                     bookModel.volumeInfo.authors![0],
-                    style: Styles.text14w600,
+                    style: Styles.text16w500,
                   ),
                   const SizedBox(
-                    height: 3,
+                    height: 6,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
