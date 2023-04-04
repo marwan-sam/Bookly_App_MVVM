@@ -11,17 +11,12 @@ class ListViewResult extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0),
-          child: ItemInListViewBest(
-            //TODO - Add Cost , Cover , Person , Ratting .... values from api:
-            cost: 1234,
-            cover: '',
-            person: '',
-            rate: 55,
-            title: '',
-            views: 1234,
-          ),
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          // child: ItemInListViewBest(
+          //   bookModel: ,
+          // ),
+          child: Text(''),
         );
       },
     );

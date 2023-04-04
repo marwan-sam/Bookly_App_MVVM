@@ -11,7 +11,7 @@ class StarAndRattingUI extends StatelessWidget {
     required this.views,
   });
   final MainAxisAlignment mainAxisAlignment;
-  final double rate;
+  final num rate;
   final int views;
   @override
   Widget build(BuildContext context) {

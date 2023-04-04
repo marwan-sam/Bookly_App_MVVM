@@ -45,7 +45,7 @@ class SectionOfImageBookDetails extends StatelessWidget {
         ),
         const StarAndRattingUI(
           //FIXME - Add Ratting and View Value
-          rate: 5.5,
+          rate: 5,
           views: 1545,
           mainAxisAlignment: MainAxisAlignment.center,
         ),

@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/Home/data/models/books_model/books_model.dart';
 import 'package:bookly_app/Features/Home/presentation/screens/widget/star_ratting_item_ui.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
@@ -6,22 +7,14 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'book_img_Item_ui.dart';
+
 class ItemInListViewBest extends StatelessWidget {
   const ItemInListViewBest({
     super.key,
-    required this.cover,
-    required this.title,
-    required this.person,
-    required this.cost,
-    required this.rate,
-    required this.views,
+    required this.bookModel,
   });
-  final String cover;
-  final String title;
-  final String person;
-  final double cost;
-  final double rate;
-  final int views;
+  final BooksModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -32,17 +25,21 @@ class ItemInListViewBest extends StatelessWidget {
         height: 125,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.5 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.amberAccent,
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(cover),
-                    )),
-              ),
+            // AspectRatio(
+            //   aspectRatio: 2.5 / 4,
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.circular(16),
+            //         color: Colors.amberAccent,
+            //         image: DecorationImage(
+            //           fit: BoxFit.fill,
+            //           image: NetworkImage(cover),
+            //         )),
+            //   ),
+            // ),
+            ImageBookItem(
+              urlImg:
+                  bookModel.volumeInfo.imageLinks?.thumbnail ?? imgNotAvalible,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 15),
@@ -52,7 +49,7 @@ class ItemInListViewBest extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      title,
+                      bookModel.volumeInfo.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.text20normal.copyWith(
@@ -64,7 +61,7 @@ class ItemInListViewBest extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    person,
+                    bookModel.volumeInfo.authors![0],
                     style: Styles.text14w600,
                   ),
                   const SizedBox(
@@ -73,8 +70,8 @@ class ItemInListViewBest extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        "$cost €",
+                      const Text(
+                        "Free€",
                         overflow: TextOverflow.ellipsis,
                         style: Styles.text20w800,
                       ),
@@ -82,8 +79,8 @@ class ItemInListViewBest extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.19,
                       ),
                       StarAndRattingUI(
-                        rate: rate,
-                        views: views,
+                        rate: bookModel.volumeInfo.averageRating ?? 0.0,
+                        views: bookModel.volumeInfo.ratingsCount ?? 0,
                       ),
                     ],
                   )

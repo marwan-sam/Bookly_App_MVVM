@@ -11,7 +11,7 @@ class BestSellerCubit extends Cubit<BestSellerState> {
 // fetching news data :=
   final HomeRepo repo;
 
-  Future<void> fetchBooks() async {
+  Future<void> fetchNews() async {
     emit(BestSellerLoading());
     var res = await repo.fetchNewsBooks();
     res.fold(
