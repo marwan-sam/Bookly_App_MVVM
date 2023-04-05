@@ -9,6 +9,7 @@ class ErrorUI extends StatelessWidget {
     return Center(
       child: Text(
         messageError,
+        textAlign: TextAlign.center,
         style: Styles.text18w600.copyWith(color: Colors.red),
       ),
     );
