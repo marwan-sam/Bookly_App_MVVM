@@ -47,5 +47,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<!-- for lunch url package "url" => Provide required visibility configuration for API level 30 and above -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<string>https</string>
+	</array>
 </dict>
 </plist>
