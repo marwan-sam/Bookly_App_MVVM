@@ -15,8 +15,11 @@ class ItemInListViewBest extends StatelessWidget {
     required this.bookModel,
   });
   final BooksModel bookModel;
+
   @override
   Widget build(BuildContext context) {
+    var widthDev = MediaQuery.of(context).size.width;
+
     return GestureDetector(
       onTap: () {
         GoRouter.of(context)
@@ -32,12 +35,12 @@ class ItemInListViewBest extends StatelessWidget {
                   imgNotAvalible,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, top: 10, right: 10),
+              padding: EdgeInsets.only(left: widthDev * 0.1, top: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
+                    width: widthDev * 0.5,
                     child: Text(
                       bookModel.volumeInfo.title!,
                       maxLines: 2,
@@ -50,9 +53,13 @@ class ItemInListViewBest extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  Text(
-                    bookModel.volumeInfo.authors![0],
-                    style: Styles.text16w500,
+                  SizedBox(
+                    width: widthDev * 0.5,
+                    child: Text(
+                      bookModel.volumeInfo.authors![0],
+                      style: Styles.text16w500,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   const SizedBox(
                     height: 6,
