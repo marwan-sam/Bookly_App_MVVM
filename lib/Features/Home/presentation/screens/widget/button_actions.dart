@@ -1,4 +1,5 @@
 import 'package:bookly_app/Features/Home/data/models/books_model/books_model.dart';
+import 'package:bookly_app/core/utils/functions/url_luncher.dart';
 import 'package:bookly_app/core/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -25,13 +26,8 @@ class ButtonActions extends StatelessWidget {
           ),
           Expanded(
             child: ButtonApp(
-              onClick: () async {
-                Uri uri = Uri.parse(book.volumeInfo.previewLink!);
-                if (!await launchUrl(uri)) {
-                  throw Exception('Could not launch $uri');
-                } else {
-                  await launchUrl(uri);
-                }
+              onClick: () {
+                launchURL(context, book.volumeInfo.previewLink!);
               },
               colorTxt: Colors.white,
               backgroundColorBtn: const Color(0xffEF8262),

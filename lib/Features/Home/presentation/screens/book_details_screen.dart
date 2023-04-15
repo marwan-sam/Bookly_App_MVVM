@@ -16,7 +16,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
   @override
   void initState() {
     BlocProvider.of<LikeThisBookCubit>(context).fetchLikeThisBook(
-      category: widget.booksModel.volumeInfo.categories![0],
+      category: widget.booksModel.volumeInfo.categories?[0] ?? " ",
     );
     super.initState();
   }

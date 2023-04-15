@@ -11,7 +11,7 @@ class LikeThisBookCubit extends Cubit<LikeThisBookState> {
   // fetching data :=
   final HomeRepo repo;
 
-  Future<void> fetchLikeThisBook({required String category}) async {
+  Future<void> fetchLikeThisBook({String? category}) async {
     emit(LikeThisBookLoading());
     var res = await repo.fetchLikeThisBook(category: category);
     res.fold(
