@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/Home/data/models/books_model/books_model.dart';
+import 'package:bookly_app/core/models/books_model/books_model.dart';
 import 'package:bookly_app/Features/Home/presentation/screens/widget/star_ratting_item_ui.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
