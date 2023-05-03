@@ -25,7 +25,7 @@ abstract class RouterApp {
       // * GoRoute For Home Screen :=
       GoRoute(
         path: keyHomeRoute,
-        builder: (context, state) => const HomeScreen(),
+        builder: (context, state) => HomeScreen(),
       ),
       // * GoRoute For Book Details Screen :=
       GoRoute(
